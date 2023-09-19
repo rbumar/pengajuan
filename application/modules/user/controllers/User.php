@@ -16,7 +16,9 @@ class User extends MY_Controller {
 					'user_data' => $this->M_user->get_all()
 				];
 
+		// $this->load->view('templates/header');
 		$this->load->view('user', $data);
+		// $this->load->view('templates/footer');
 	}
 
 	public function user_table(){
