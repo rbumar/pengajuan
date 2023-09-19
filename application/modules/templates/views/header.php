@@ -89,7 +89,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Barang</h6>
                         <a class="collapse-item" href="javascript:void(0)" url="<?php echo base_url('master_data/master_barang'); ?>">Barang</a>
-                        <a class="collapse-item" href="javascript:void(0)" url="<?php echo base_url('master_data/stock'); ?>">Stock</a>
+                        <a class="collapse-item" href="javascript:void(0)" url="<?php echo base_url('master_data/master_stock'); ?>">Stock</a>
                     </div>
                 </div>
             </li>

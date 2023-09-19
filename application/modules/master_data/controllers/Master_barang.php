@@ -14,7 +14,7 @@ class Master_barang extends MY_Controller{
 		parent::__construct();
 		// setting url untuk form 
 		$base_url = base_url('master_data/master_barang');
-		$this->_url = ['url' => $base_url, 'addUrl' => $base_url.'/form', 'crud' => $base_url.'/crud'];
+		$this->_url = ['url' => $base_url, 'form' => $base_url.'/form', 'crud' => $base_url.'/crud'];
 		$this->load->model('m_master_barang');
 	}
 

@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class M_master_barang extends CI_Model{
 
 	private $_table = 'barang';
-	private $_id = 'id_barang';
+	public $_id = 'id_barang';
 	public $_placeholderId = 'PLACEHOLDER_ID_BARANG';
 	public $_sequence = 'barang_seq';
 
