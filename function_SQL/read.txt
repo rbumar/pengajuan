@@ -1,0 +1,83 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+
+Table karyawan {
+  id_karyawan varchar [primary key]
+  nama_karyawan varchar
+  alamat varchar
+  email varchar 
+}
+
+Table users {
+  id integer [primary key]
+  email varchar
+  password varchar
+  id_role varchar
+}
+
+Table role {
+  id_role integer [primary key]
+  nama_role varchar
+}
+
+table pengajuan_pettycash{
+  id_pengajuan varchar [primary key]
+  nama_pengajuan varchar
+  nominal integer
+  nominal_approval integer
+  id_karyawan varchar
+  deskripsi varchar
+}
+table pertanggung_jawaban{
+  id_pertanggung_jawab varchar [primary key]
+  id_pengajuan varchar
+  nominal integer
+  deskripsi varchar
+}
+
+table approval{
+  id_approval varchar [primary key]
+  id_pengajuan varchar
+  id_karyawan varchar
+  status varchar
+  deskripsi varchar
+}
+
+
+table barang{
+id_barang varchar [primary key]
+nama_barang varchar
+deskripsi varchar 
+}
+
+table stok {
+  id_stok integer [primary key]
+  id_barang varchar
+  stok integer
+}
+
+table pengajuan_barang{
+  id_pengajuan varchar [primary key]
+  nama_pengajuan varchar
+  id_barang varchar
+  kuantitas integer
+  kuantitas_approval integer
+  deskripsi varchar
+}
+
+// Ref: users.email > karyawan.email
+// Ref: users.id_role > role.id_role
+// Ref: karyawan.id_karyawan > approval.id_karyawan
+// Ref : karyawan.id_karyawan > pengajuan_pettycash.id_karyawan
+// Ref: pengajuan_pettycash.id_pengajuan > pertanggung_jawaban.id_pengajuan
+// Ref: approval.id_pengajuan > pengajuan_pettycash.id_pengajuan
+// Ref: approval.id_pengajuan > pengajuan_barang.id_pengajuan
+// Ref: pengajuan_barang.id_barang > barang.id_barang
+// Ref: barang.id_barang > stok.id_barang
+
+
+// Ref: posts.user_id > users.id // many-to-one
+
+// Ref: users.id < follows.following_user_id
+
+// Ref: users.id < follows.followed_user_id
