@@ -107,7 +107,7 @@
                     <div class="bg-white py-2 collapse-inner rounded">
                         <h6 class="collapse-header">Pengajuan</h6>
                         <a class="collapse-item" href="javascript:void(0)" url="<?php echo base_url('product'); ?>">Petty Cash</a>
-                        <a class="collapse-item" href="javascript:void(0)" url="<?php echo base_url('pengajuan/barang'); ?>">Barang</a>
+                        <a class="collapse-item" href="javascript:void(0)" url="<?php echo base_url('pengajuan/pengajuan_barang'); ?>">Barang</a>
                     </div>
                 </div>
             </li>
