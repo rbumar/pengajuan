@@ -1,0 +1,15 @@
+create table pertanggung_jawaban_sequence (id serial primary key, last_id_pengajuan int);
+insert into pertanggung_jawaban_sequence (last_id_pengajuan) values (0);
+
+//fungction yang digunakan untuk membuat id_pertanggung_jawab
+CREATE OR REPLACE FUNCTION generate_pertanggung_jawaban_sequence() RETURNS VARCHAR AS $$
+DECLARE 
+    next_id INT;
+    generated_id VARCHAR;
+BEGIN
+    SELECT (last_id_pengajuan + 1) INTO next_id FROM pertanggung_jawaban_sequence;
+    UPDATE pertanggung_jawaban_sequence SET last_id_pengajuan = next_id;
+    generated_id := 'PJ-' || LPAD(next_id::text, 4, '0');
+    RETURN generated_id;
+END;
+$$ LANGUAGE plpgsql;

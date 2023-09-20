@@ -1,0 +1,16 @@
+create  table pettycash_sequence (id serial primary key, last_id_pengajuan int);
+insert into pettycash_sequence (last_id_pengajuan) values (0);
+
+//fungction yang digunakan untuk membuat id_pengajuan
+
+CREATE OR REPLACE FUNCTION generate_pettycash_sequence() RETURNS VARCHAR AS $$
+DECLARE
+    next_id INT;
+    generated_id VARCHAR;
+BEGIN
+    SELECT (last_id_pengajuan + 1) INTO next_id FROM pettycash_sequence;
+    UPDATE pettycash_sequence SET last_id_pengajuan = next_id;
+    generated_id := 'PT-' || LPAD(next_id::text, 4, '0');
+    RETURN generated_id;
+END;
+$$ LANGUAGE plpgsql;

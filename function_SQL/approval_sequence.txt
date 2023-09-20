@@ -1,0 +1,16 @@
+create table approval_sequence (id serial primary key, last_id_pengajuan int);
+insert into approval_sequence (last_id_pengajuan) values (0);
+
+//pembuatan id_approval
+
+CREATE OR REPLACE FUNCTION generate_approval_sequence() RETURNS VARCHAR AS $$
+DECLARE 
+    next_id INT;
+    generated_id VARCHAR;
+BEGIN
+    SELECT (last_id_pengajuan + 1) INTO next_id FROM approval_sequence;
+    UPDATE approval_sequence SET last_id_pengajuan = next_id;
+    generated_id := 'AP-' || LPAD(next_id::text, 4, '0');
+    RETURN generated_id;
+END;
+$$ LANGUAGE plpgsql;
