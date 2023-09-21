@@ -33,7 +33,6 @@ class Auth extends MY_Controller {
 			return $this->load->view('auth', ['message' => $login_result]);
 		}else{
 			$this->session->set_userdata('name', $this->input->post('email'));
-			// die(var_dump($data));
 			redirect('home');
 		}
 		
