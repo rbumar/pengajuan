@@ -21,6 +21,13 @@ CREATE TABLE public.global_param (
 	value text NULL
 );
 
+INSERT INTO public.global_param (id,"name",data_type,value) VALUES
+     (1,'pattern_id_karyawan','str','KYR-YYYYMM-00000'),
+     (2,'pattern_id_barang','str','BRG-YYYYMM-00000'),
+     (3,'pattern_id_pengajuan_barang','str','PBR-YYYYMM-00000'),
+     (4,'pattern_id_approval','str','APR-YYYYMM-00000');
+
+
 CREATE TABLE public.barang (
 	id_barang varchar NOT NULL,
 	nama_barang varchar NULL,

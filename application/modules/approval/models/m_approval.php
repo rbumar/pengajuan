@@ -6,7 +6,7 @@ class M_approval extends CI_Model{
 	private $_table = 'approval';
 	public $_id = 'id_approval';
 	public $_sequence = 'approval_seq';
-	public $_placeholderId = 'PLACEHOLDER_ID_APPROVAL';
+	public $_placeholderId = 'pattern_id_approval';
 	public $_column = [
 		'id_approval' => ['label' => 'Kode Pengajuan', 'show' => true],
 		'nama_pengajuan' => 'Nama Pengajuan',

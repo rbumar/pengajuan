@@ -68,6 +68,13 @@ class M_pengajuan_barang extends CI_Model{
 		unset($data['status']);
 
 		if($data[$this->_id] !== ''){
+			$this->db->where($this->_id, $id);
+			$pengajuan = $this->db->get($this->_view)->row();
+			
+			if($pengajuan->status !== 'OPEN'){
+				throw new Exception('Tidak dapat melanjutkan proses untuk data dengan status '.$pengajuan->status);
+			}
+
 			$this->db->where($this->_id, $data[$this->_id]);
 			return $this->db->update($this->_table, $data);
 
@@ -89,8 +96,8 @@ class M_pengajuan_barang extends CI_Model{
 		
 	}
 
+	// insert into approval 
 	public function submit($id){
-		// insert into approval 
 		$this->db->where($this->_id, $id);
 		$pengajuan = $this->db->get($this->_view)->row();
 		
@@ -109,6 +116,13 @@ class M_pengajuan_barang extends CI_Model{
 	}
 
 	public function delete($id){
+		$this->db->where($this->_id, $id);
+		$pengajuan = $this->db->get($this->_view)->row();
+		
+		if($pengajuan->status !== 'OPEN'){
+			throw new Exception('Tidak dapat melanjutkan proses untuk data dengan status '.$pengajuan->status);
+		}
+
 		$this->db->where($this->_id, $id);
 		return $this->db->delete($this->_table);
 	}
