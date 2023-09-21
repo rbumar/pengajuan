@@ -44,6 +44,13 @@ class Auth extends MY_Controller {
 		}
 		return true;
 	}
+
+	public function is_logged_in(){
+		if(!$this->session->userdata['isLoggedIn']){
+			redirect('auth');
+		}
+		return true;
+	}
 	
 	public function signOut(){
 		$this->session->sess_destroy();
