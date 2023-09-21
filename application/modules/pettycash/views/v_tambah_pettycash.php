@@ -1,6 +1,6 @@
 <form method="post" id="formPengajuan">
         <div class="col-12" style="text-align:end;">
-        <button type="submit" name="submit" value="submit" class="btn btn-outline-success mx-auto text-center"><i class="fa fa-floppy-o" aria-hidden="true"></i> SMP</button>
+        <button type="submit" name="submit" value="submit" class="btn btn-outline-success mx-auto text-center"><i class="fa fa-floppy-o" aria-hidden="true"></i> Simpan</button>
     </div>
     <div class="col-md-12 mt-3">
         <div class="card">
