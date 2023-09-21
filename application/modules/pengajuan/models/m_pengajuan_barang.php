@@ -6,7 +6,7 @@ class M_pengajuan_barang extends CI_Model{
 	private $_table = 'pengajuan_barang';
 	public $_id = 'id_pengajuan';
 	public $_sequence = 'pengajuan_barang_seq';
-	public $_placeholderId = 'PLACEHOLDER_ID_PENGAJUAN_BARANG';
+	public $_placeholderId = 'pattern_id_pengajuan_barang';
 	public $_column = [
 		'id_pengajuan' => 'Kode Pengajuan',
 		'nama_pengajuan' => 'Nama Pengajuan',

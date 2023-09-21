@@ -5,7 +5,7 @@ class M_master_barang extends CI_Model{
 
 	private $_table = 'barang';
 	public $_id = 'id_barang';
-	public $_placeholderId = 'PLACEHOLDER_ID_BARANG';
+	public $_placeholderId = 'pattern_id_barang';
 	public $_sequence = 'barang_seq';
 
 	public function __construct(){
