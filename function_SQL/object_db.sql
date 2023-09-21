@@ -58,6 +58,7 @@ AS SELECT k.id_karyawan,
 CREATE OR REPLACE VIEW public.v_users
 AS SELECT u.id,
     u.email,
+    u.password,
     k.id_role,
     k.id_karyawan,
     k.nama_karyawan,
@@ -69,7 +70,7 @@ AS SELECT u.id,
      JOIN karyawan k ON u.email::text = k.email
      JOIN role r ON r.id_role::character varying::text = k.id_role::text;
 
-     
+
 -- public.v_stock source
 
 CREATE OR REPLACE VIEW public.v_stock

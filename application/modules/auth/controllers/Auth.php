@@ -12,7 +12,7 @@ class Auth extends MY_Controller {
 		$this->load->view('auth');
 	}
 
-	public function sign_in(){
+	public function signIn(){
 
 		$this->load->model('auth/M_auth');
 		$this->load->library('form_validation');
@@ -38,14 +38,14 @@ class Auth extends MY_Controller {
 		
 	}
 
-	public function is_logged_in(){
-		if(!$this->session->userdata['is_logged_in']){
+	public function isLoggedIn(){
+		if(!$this->session->userdata['isLoggedIn']){
 			redirect('auth');
 		}
 		return true;
 	}
 	
-	public function sign_out(){
+	public function signOut(){
 		$this->session->sess_destroy();
 		redirect('auth');
 	}

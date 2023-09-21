@@ -41,7 +41,7 @@
                                     <div class="text-center">
                                         <h1 class="h4 text-gray-900 mb-4">Welcome Back!</h1>
                                     </div>
-                                    <form class="user" action="<?php echo base_url()?>auth/sign_in" method="post">
+                                    <form class="user" action="<?php echo base_url()?>auth/signin" method="post">
                                         <div class="form-group">
                                             <input name="email" type="email" id="email" class="form-control form-control-user"
                                                 id="exampleInputEmail" aria-describedby="emailHelp"
