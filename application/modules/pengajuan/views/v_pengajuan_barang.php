@@ -71,6 +71,9 @@
 											<a href="#" title="Submit" class="btn btn-primary btn-circle btn-sm submit" data="<?= $value->$idCol ?>">
 												<i class="fas fa-arrow-right"></i>
 											</a>
+											<a href="javascript:void(0);" title="Submit" class="btn btn-info btn-circle btn-sm details">
+												<i class="fas fa-arrow-down"></i>
+											</a>
 										</td>
 									</tr>
 									<?php $no++ ?>
@@ -82,6 +85,7 @@
 			</div>
 		</div>
 	</div>
+	
 
 	<script type="text/javascript">
 		
@@ -90,9 +94,39 @@
 			window.parent.load_content(url);
 		}
 
+		function format(data) {
+		    return `<table>
+						<tr>
+							<th>Kode Barang</th>
+							<th>Nama Barang</th>
+							<th>Qty</th>
+						</tr>
+						<tr>
+							<td>001</td>
+							<td>Kursi Kerja</td>
+							<td>10</td>
+						</tr>
+					</table>`;
+		}
+
 		$(document).ready(function(){
 
-			$('#dataTable').DataTable();
+			const table = $('#dataTable').DataTable();
+
+			$('#dataTable tbody').on('click', 'a.details', function () {
+		        var button = $(this);
+		        var row = table.row(button.closest('tr'));
+
+		        if (row.child.isShown()) {
+		            // This row is already open - close it
+		            row.child.hide();
+		            button.find('i').removeClass('fa-arrow-up').addClass('fa-arrow-down');
+		        } else {
+		            // Open this row
+		            row.child(format(row.data())).show();
+		            button.find('i').removeClass('fa-arrow-down').addClass('fa-arrow-up');
+		        }
+		    });
 
 			$('.edit').click(function(){
 				let id = $(this).attr('data');

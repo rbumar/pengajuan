@@ -16,8 +16,8 @@ class M_pengajuan_barang extends CI_Model{
 		'deskripsi' => 'Deskripsi'
 	];
 	private $_view = 'v_pengajuan_barang';
-	private $_status = ['ALL', 'OPEN', 'SUBMITTED', 'APPROVED', 'REJECTED'];
-	public $_colorClass = ['ALL' => 'info', 'OPEN' => 'warning', 'SUBMITTED' =>'primary', 'APPROVED' => 'success', 'REJECTED' =>'danger'];
+	private $_status = ['ALL', 'OPEN', 'SUBMITTED', 'APPROVED', 'REJECTED', 'NEED_APPROVAL'];
+	public $_colorClass = ['ALL' => 'info', 'OPEN' => 'warning', 'SUBMITTED' =>'primary', 'APPROVED' => 'success', 'REJECTED' =>'danger', 'NEED_APPROVAL' => 'sucess'];
 
 	public function __construct(){
 		parent::__construct();
