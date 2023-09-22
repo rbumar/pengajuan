@@ -147,7 +147,6 @@
 						}
 					});	
 				}
-
 			});
 
 			$('.submit').click(function(){
